@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* https://codepen.io/alandunning/pen/bNNRvQ */
+
+@layer base {
+  .font-alien {
+    font-family: 'Alien Encounters', cursive;
+  }
+
+  .font-alien-solid {
+    font-family: 'Alien Encounters Solid', cursive;
+  }
+}
+
+@layer components {
+  .button {
+    @apply duration-300 bg-purple-lot px-3 py-2 text-sm relative 
+      hover:bg-purple-mid z-10 
+      after:w-full after:h-full after:absolute after:bg-purple-mid after:left-1 after:top-1 after:z-20
+      hover:after:bg-purple-lot after:duration-1000;
+  }
+}
+
+@layer utilities {
+  .u-container {
+    @apply mx-auto px-4 md:px-10 xl:px-40;
+  }
+
+  .u-orbit-animated {
+    @apply absolute;
+    -webkit-animation: myOrbit 4s linear infinite;
+    -moz-animation: myOrbit 4s linear infinite;
+    -o-animation: myOrbit 4s linear infinite;
+    animation: myOrbit 4s linear infinite;
+  }
+}
